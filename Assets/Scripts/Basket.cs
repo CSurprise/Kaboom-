@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 
 public class Basket : MonoBehaviour
@@ -9,7 +11,11 @@ public class Basket : MonoBehaviour
     private float speed = 5;
 
     public GameObject manager;
+    public AudioSource sound;
+    public AudioClip thud;
+    
 
+    public bool Mouse = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +25,22 @@ public class Basket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (mouse.x < 9.25 || mouse.x > -9.25)
+
+        if (Input.GetKeyDown("k"))
         {
-            transform.position = new Vector3(mouse.x, transform.position.y, 2);
+            Mouse = false;
         }
+        if (Mouse)
+        {
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (mouse.x < 9.25 || mouse.x > -9.25)
+            {
+                transform.position = new Vector3(mouse.x, transform.position.y, 2);
+            }
+        }
+
+
+
         if ((transform.position.x < 9.25 ) || (transform.position.x > -9.25))
         {
             if (Input.GetKey("left"))
@@ -41,5 +58,6 @@ public class Basket : MonoBehaviour
     {
         Destroy(collision.gameObject);
         manager.SendMessage("counter");
+        sound.PlayOneShot(thud);
     }
 }
