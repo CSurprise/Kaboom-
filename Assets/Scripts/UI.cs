@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
 {
 
     public Button start;
+    public Button main;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        start.onClick.AddListener(() => SceneManager.LoadScene("SampleScene"));
+        start.onClick.AddListener(() => SceneManager.LoadScene("Game"));
+        main.onClick.AddListener(() => SceneManager.LoadScene("titlescreen"));
+
     }
 }
