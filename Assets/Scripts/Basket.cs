@@ -15,18 +15,19 @@ public class Basket : MonoBehaviour
     public AudioClip thud;
     
 
-    public bool Mouse = false;
+    public int Mouse = 1;
     // Start is called before the first frame update
     void Start()
     {
         pause = GameObject.Find("Panel");
         pause.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Mouse = PlayerPrefs.GetInt("controller");
         if (Input.GetKeyDown("escape"))
         {
             if (!pause.activeInHierarchy)
@@ -38,7 +39,7 @@ public class Basket : MonoBehaviour
                 ContinueMe();
             }
         }
-        if (Mouse)
+        if (Mouse == 1)
         {
             mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (mouse.x < 9.25 || mouse.x > -9.25)
@@ -80,4 +81,5 @@ public class Basket : MonoBehaviour
         Time.timeScale = 1;
         pause.SetActive(false);
     }
+
 }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class TreeMove : MonoBehaviour
 {
@@ -8,7 +10,10 @@ public class TreeMove : MonoBehaviour
     public GameObject apple;
     public GameObject spawn;
     Vector3 direction = Vector3.right;
-    
+
+    public AudioSource sound;
+    public AudioClip thud;
+
     private float speed = 5;
 
     float directionChangeChance = .01f;
@@ -18,6 +23,8 @@ public class TreeMove : MonoBehaviour
     void Start()
     {
         speed = Random.Range(3, 5);
+        sound.Play();
+        sound.PlayOneShot(thud);
     }
 
     // Update is called once per frame

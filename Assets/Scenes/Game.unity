@@ -1474,6 +1474,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 937377790}
+  music: {fileID: 2006035082}
+  basket: {fileID: 300962821}
   thud: {fileID: 8300000, guid: acdd397c80d0ff249a6b8055bba622bb, type: 3}
   tracker: {fileID: 703023805}
   LifeTracker: {fileID: 606152676}
@@ -2045,10 +2047,10 @@ RectTransform:
   m_Father: {fileID: 190647800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 382, y: 168}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -758, y: -376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232140015
 MonoBehaviour:
@@ -2953,6 +2955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apple: {fileID: 1235804609939141868, guid: baa0768717e5a194884576bc4d9d1c67, type: 3}
   spawn: {fileID: 46307146642301111}
+  sound: {fileID: 2006035082}
+  thud: {fileID: 8300000, guid: 7e3a88a59bdd6d9408c43e7e01c360da, type: 3}
 --- !u!82 &2006035082
 AudioSource:
   m_ObjectHideFlags: 0
